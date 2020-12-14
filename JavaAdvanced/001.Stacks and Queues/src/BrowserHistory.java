@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class BrowserHistory {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        //Creating a Deque
         ArrayDeque<String> browser = new ArrayDeque<>();
         String input = sc.nextLine();
         String current = "";
