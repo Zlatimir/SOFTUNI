@@ -24,3 +24,5 @@ hs_err_pid*
 /Java Fundamentals/*.iml
 /Java Fundamentals/.idea/*.xml
 /Java Fundamentals/.idea/*.name
+*.docx
+/JavaAdvanced/001.Stacks and Queues/.idea/workspace.xml
