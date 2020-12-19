@@ -26,3 +26,6 @@ hs_err_pid*
 /Java Fundamentals/.idea/*.name
 *.docx
 /JavaAdvanced/001.Stacks and Queues/.idea/workspace.xml
+/JavaAdvanced/02.Multidimensional Arrays/.idea/*.name
+/JavaAdvanced/02.Multidimensional Arrays/.idea/*.xml
+/JavaAdvanced/02.Multidimensional Arrays/*.iml
