@@ -29,3 +29,5 @@ hs_err_pid*
 /JavaAdvanced/02.Multidimensional Arrays/.idea/*.name
 /JavaAdvanced/02.Multidimensional Arrays/.idea/*.xml
 /JavaAdvanced/02.Multidimensional Arrays/*.iml
+/JavaAdvanced/03.Sets and Maps Advanced/.idea/*.xml
+/JavaAdvanced/03.Sets and Maps Advanced/*.iml
