@@ -31,3 +31,9 @@ hs_err_pid*
 /JavaAdvanced/02.Multidimensional Arrays/*.iml
 /JavaAdvanced/03.Sets and Maps Advanced/.idea/*.xml
 /JavaAdvanced/03.Sets and Maps Advanced/*.iml
+/JavaAdvanced/04.Streams, Files and Directories/.idea/*.xml
+/JavaAdvanced/04.Streams, Files and Directories/04. Java-Advanced-Streams-Files-and-Directories-Resources-Exercises/04. Java-Advanced-Files-and-Streams-Exercises-Resources/Exercises Resources/*.txt
+/JavaAdvanced/04.Streams, Files and Directories/04. Java-Advanced-Streams-Files-and-Directories-Resources-Exercises/04. Java-Advanced-Files-and-Streams-Exercises-Resources/*.txt
+*.txt
+*.iml
+*.xml
