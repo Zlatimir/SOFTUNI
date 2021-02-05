@@ -1,4 +1,4 @@
-package guild;
+﻿package guild;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,7 +20,7 @@ public class Guild {
     }
 
     public void addPlayer(Player player){
-        if (this.roster.size() <= this.capacity){
+        if (this.roster.size() < this.capacity){
             roster.add(player);
         }
     }
