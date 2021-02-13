@@ -43,4 +43,6 @@ public class ListyIterator {
         }
     }
 
+    public void printAll() {
+    }
 }

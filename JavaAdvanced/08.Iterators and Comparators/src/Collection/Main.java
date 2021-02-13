@@ -33,6 +33,9 @@ public class Main {
                 case "HasNext":
                     System.out.println(list.hasNext());
                     break;
+                case "PrintAll":
+                    list.printAll();
+                    break;
 
             }
 

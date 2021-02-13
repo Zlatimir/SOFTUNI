@@ -45,14 +45,20 @@ public class ListyIterator implements Iterable{
         }
     }
 
+
     @Override
     public Iterator iterator() {
         Iterator<String> iterator = list.iterator();
         return iterator;
     }
 
-    @Override
-    public void forEach(Consumer action) {
+    public void printAll(){
+//        for (String s : list) {
+//            System.out.print(s + " ");
+//        }
 
+        for (int i = 0; i < this.list.size(); i++) {
+            System.out.print(this.list.get(i));
+        }
     }
 }
