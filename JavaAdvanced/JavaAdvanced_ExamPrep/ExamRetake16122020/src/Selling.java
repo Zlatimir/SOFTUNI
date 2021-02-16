@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Selling {
 
-    static int playerRow;
-    static int playerCol;
-    static int[][]pilars = new int[2][2];
-    static boolean isFirstPilar = true;
-    static boolean isOut = false;
-    static int money;
+    private static int playerRow;
+    private static int playerCol;
+    private static int[][] pillars = new int[2][2];
+    private static boolean isFirstPillar = true;
+    private static boolean isOut = false;
+    private static int money;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -27,13 +27,13 @@ public class Selling {
                 playerCol = line.indexOf("S");
             }
             if (line.contains("O")){
-                if (isFirstPilar){
-                    pilars[0][0] = i;
-                    pilars[0][1] = line.indexOf("O");
-                    isFirstPilar = false;
+                if (isFirstPillar){
+                    pillars[0][0] = i;
+                    pillars[0][1] = line.indexOf("O");
+                    isFirstPillar = false;
                 } else {
-                    pilars[1][0] = i;
-                    pilars[1][1] = line.indexOf("O");
+                    pillars[1][0] = i;
+                    pillars[1][1] = line.indexOf("O");
                 }
             }
             matrix[i] = line.toCharArray();
@@ -79,15 +79,15 @@ public class Selling {
         if (newRow < 0 || newRow == matrix.length || newCol < 0 || newCol == matrix.length){
             isOut = true;
         } else {
-            if (newRow == pilars[0][0] && newCol == pilars[0][1]){
+            if (newRow == pillars[0][0] && newCol == pillars[0][1]){
                 matrix[newRow][newCol] = '-';
-                newRow = pilars[1][0];
-                newCol = pilars[1][1];
+                newRow = pillars[1][0];
+                newCol = pillars[1][1];
                 replacePlayer(matrix, newRow, newCol);
-            } else if (newRow == pilars[1][0] && newCol == pilars[1][1]){
+            } else if (newRow == pillars[1][0] && newCol == pillars[1][1]){
                 matrix[newRow][newCol] = '-';
-                newRow = pilars[0][0];
-                newCol = pilars[0][1];
+                newRow = pillars[0][0];
+                newCol = pillars[0][1];
                 replacePlayer(matrix, newRow, newCol);
             } else if (Character.isDigit(matrix[newRow][newCol])){
                 money += matrix[newRow][newCol] - '0';

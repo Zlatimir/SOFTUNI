@@ -10,38 +10,38 @@ import java.util.List;
 public class Bakery {
     private String name;
     private int capacity;
-    private List<Employee> list;
+    private List<Employee> employees;
 
     public Bakery(String name, int capacity){
         this.name = name;
         this.capacity = capacity;
-        this.list = new ArrayList<>();
+        this.employees = new ArrayList<>();
     }
 
     public void add(Employee employee){
-        if (list.size() < this.capacity){
-            list.add(employee);
+        if (employees.size() < this.capacity){
+            employees.add(employee);
         }
     }
 
     public boolean remove(String name){
         int indexToRemove = -1;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getName().equals(name)){
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getName().equals(name)){
                 indexToRemove = i;
                 break;
             }
         }
         if (indexToRemove != -1){
-            list.remove(indexToRemove);
+            employees.remove(indexToRemove);
             return true;
         }
         return false;
     }
 
     public Employee getOldestEmployee(){
-        Employee res = list.get(0);
-        for (Employee e : list) {
+        Employee res = employees.get(0);
+        for (Employee e : employees) {
             if (res.getAge() < e.getAge()){
                 res = e;
             }
@@ -50,7 +50,7 @@ public class Bakery {
     }
 
     public Employee getEmployee(String name){
-        for (Employee e : list) {
+        for (Employee e : employees) {
             if (e.getName().equals(name)){
                 return e;
             }
@@ -59,12 +59,12 @@ public class Bakery {
     }
 
     public int getCount(){
-        return list.size();
+        return employees.size();
     }
 
     public String report(){
         StringBuilder res = new StringBuilder("Employees working at Bakery " + this.name + ":");
-        for (Employee e : list) {
+        for (Employee e : employees) {
             res.append(System.lineSeparator()).append(e);
         }
         return  res.toString();
