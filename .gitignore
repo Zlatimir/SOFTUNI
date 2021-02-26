@@ -38,3 +38,4 @@ hs_err_pid*
 *.iml
 *.xml
 *.name
+/JavaOOP/02.Encapsulation/src/ClassBox/Main.java
