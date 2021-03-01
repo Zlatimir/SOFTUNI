@@ -16,18 +16,18 @@ public class Chicken {
     }
 
     private void setName(String name) {
-        if (!name.equals(null) && !name.trim().isEmpty()) {
-            this.name = name;
-        } else {
+        if ((name == null) || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty.");
+        } else {
+            this.name = name;
         }
     }
 
     private void setAge(int age) {
-        if (age >= 0 && age <= 15) {
-            this.age = age;
-        } else {
+        if (age < 0 || age > 15) {
             throw new IllegalArgumentException("Age should be between 0 and 15.");
+        } else {
+            this.age = age;
         }
     }
 

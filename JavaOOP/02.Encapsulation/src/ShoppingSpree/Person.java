@@ -11,10 +11,10 @@ import java.util.List;
 public class Person {
     private String name;
     private double money;
-    private List<Product> shoppingList;
+    private List<Product> productList;
 
     public Person(String name, double money) {
-        this.shoppingList = new ArrayList<>();
+        this.productList = new ArrayList<>();
         setName(name);
         setMoney(money);
     }
@@ -39,17 +39,17 @@ public class Person {
         return this.name;
     }
 
-    public List<Product> getShoppingList() {
-        return Collections.unmodifiableList(shoppingList);
+    public List<Product> getProductList() {
+        return Collections.unmodifiableList(productList);
     }
 
     public void buyProduct(Product product) {
         if (this.money >= product.getCost()) {
-            shoppingList.add(product);
+            productList.add(product);
             System.out.printf("%s bought %s%n", this.getName(), product.getName());
             this.money -= product.getCost();
         } else {
-            System.out.printf("%s can't afford %s%n", this.getName(), product.getName());
+            throw new IllegalArgumentException(String.format("%s can't afford %s%n", this.getName(), product.getName()));
         }
     }
 }
