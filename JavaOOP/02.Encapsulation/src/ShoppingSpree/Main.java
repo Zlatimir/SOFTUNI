@@ -42,10 +42,10 @@ public class Main {
 //
 //        for (Map.Entry<String, Person> entry : persons.entrySet()) {
 //            System.out.print(entry.getKey() + " - ");
-//            if (entry.getValue().getProductList().isEmpty()) {
+//            if (entry.getValue().getProducts().isEmpty()) {
 //                System.out.println("Nothing bought");
 //            } else {
-//                System.out.println(entry.getValue().getProductList().stream().
+//                System.out.println(entry.getValue().getProducts().stream().
 //                        map(Object::toString).collect(Collectors.joining(", ")));
 //            }
 //        }

@@ -10,8 +10,8 @@ public class Chicken {
     private double eggsPerDay;
 
     public Chicken(String name, int age) {
-        this.setAge(age);
         this.setName(name);
+        this.setAge(age);
         this.eggsPerDay = calculateProductPerDay();
     }
 
