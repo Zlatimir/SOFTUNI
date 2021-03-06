@@ -56,7 +56,8 @@ public class Animal {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.getClass().getSimpleName()).append(System.lineSeparator());
-        sb.append(this.getName()).append(this.getAge()).append(this.getGender()).append(System.lineSeparator());
+        sb.append(String.format("%s ", this.getName())).append(String.format("%d ", this.getAge()))
+                .append(this.getGender()).append(System.lineSeparator());
         sb.append(this.produceSound()).append(System.lineSeparator());
         return sb.toString().trim();
     }

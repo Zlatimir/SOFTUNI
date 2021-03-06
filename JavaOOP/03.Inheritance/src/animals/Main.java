@@ -6,6 +6,7 @@ package animals;
 
 public class Main {
     public static void main(String[] args) {
-
+        Tomcat a = new Tomcat("Pesho", 22);
+        System.out.println(a);
     }
 }
