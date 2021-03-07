@@ -39,3 +39,4 @@ hs_err_pid*
 *.xml
 *.name
 /JavaOOP/02.Encapsulation/src/ClassBox/Main.java
+*.suml
