@@ -23,7 +23,6 @@ public abstract class Vehicle {
         if (fuelNeeded <= this.fuelQuantity) {
             this.fuelQuantity -= fuelNeeded;
             this.traveledDistance += distance;
-
             return true;
         }
         return false;
