@@ -40,3 +40,4 @@ hs_err_pid*
 *.name
 /JavaOOP/02.Encapsulation/src/ClassBox/Main.java
 *.suml
+*.JPG
