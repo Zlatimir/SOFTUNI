@@ -23,7 +23,7 @@ public class Main {
 
             command = scanner.nextLine();
             int[] evilPosition = parseToIntArray(command);
-            
+
             int evilRow = evilPosition[0];
             int evilCol = evilPosition[1];
 
