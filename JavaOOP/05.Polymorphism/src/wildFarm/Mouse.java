@@ -1,4 +1,4 @@
-package wildFarm;
+﻿package wildFarm;
 
 
 /**
@@ -21,7 +21,7 @@ public class Mouse extends Mammal {
         if (food instanceof Vegetable) {
             super.eat(food);
         } else {
-           throw new IllegalArgumentException("Mice are not eating that type of food");
+           throw new IllegalArgumentException("Mice are not eating that type of food!");
         }
     }
 }
