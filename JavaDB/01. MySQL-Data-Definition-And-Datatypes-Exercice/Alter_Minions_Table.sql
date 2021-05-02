@@ -6,3 +6,4 @@ ADD CONSTRAINT `fk_towns`
   REFERENCES `towns` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+  
