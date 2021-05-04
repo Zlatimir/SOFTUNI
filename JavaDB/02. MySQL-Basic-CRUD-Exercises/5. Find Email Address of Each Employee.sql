@@ -1,0 +1,1 @@
+SELECT CONCAT(`first_name`, '.', `last_name`, '@suftuni.bg') AS `full_email_address` FROM `employees`;
