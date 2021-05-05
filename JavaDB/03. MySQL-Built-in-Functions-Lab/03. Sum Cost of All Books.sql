@@ -1,0 +1,1 @@
+SELECT FORMAT(sum(`cost`),2) AS 'Total Cost'  FROM `books`;
