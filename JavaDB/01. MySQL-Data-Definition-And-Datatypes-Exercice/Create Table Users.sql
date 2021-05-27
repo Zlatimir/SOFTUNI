@@ -1,9 +1,9 @@
 CREATE TABLE `users`(
-`id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-`username` VARCHAR(30) NOT NULL,
+`id` BIGINT UNSIGNED PRIMARY KEY UNIQUE AUTO_INCREMENT NOT NULL,
+`username` VARCHAR(30) UNIQUE NOT NULL,
 `password` VARCHAR(25) NOT NULL,
 `profile_picture` BLOB(900000),
-`last_login_time` TIMESTAMP,
+`last_login_time` TIMESTAMP DEFAULT NOW(),
 `is_deleted` BOOLEAN DEFAULT FALSE);
 
 INSERT INTO `users`(`username`, `password`)
