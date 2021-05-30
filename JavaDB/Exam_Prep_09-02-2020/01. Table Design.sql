@@ -1,12 +1,12 @@
-CREATE SCHEMA fsd;
+CREATE SCHEMA IF NOT EXISTS fsd;
 
 USE fsd;
 
-CREATE TABLE countries (
+CREATE TABLE IF NOT EXISTS countries (
 id INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(45) NOT NULL);
 
-CREATE TABLE towns (
+CREATE TABLE  IF NOT EXISTS towns (
 id INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(45) NOT NULL,
 country_id INT NOT NULL,
@@ -14,7 +14,7 @@ CONSTRAINT fk_towns_countries
 FOREIGN KEY (country_id)
 REFERENCES countries (id));
 
-CREATE TABLE stadiums (
+CREATE TABLE  IF NOT EXISTS stadiums (
 id INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(45) NOT NULL,
 capacity INT NOT NULL,
@@ -23,7 +23,7 @@ CONSTRAINT fk_stadiums_towns
 FOREIGN KEY (town_id)
 REFERENCES towns (id));
 
-CREATE TABLE teams (
+CREATE TABLE  IF NOT EXISTS teams (
 id INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(45) NOT NULL,
 established DATE NOT NULL,
@@ -33,7 +33,7 @@ CONSTRAINT fk_teams_stadiums
 FOREIGN KEY (stadium_id)
 REFERENCES stadiums (id));
 
-CREATE TABLE skills_data (
+CREATE TABLE  IF NOT EXISTS skills_data (
 id INT PRIMARY KEY AUTO_INCREMENT,
 dribbling INT DEFAULT 0,
 pace INT DEFAULT 0,
@@ -43,7 +43,7 @@ speed INT DEFAULT 0,
 strength INT DEFAULT 0
 );
 
-CREATE TABLE players(
+CREATE TABLE  IF NOT EXISTS players(
 id INT PRIMARY KEY AUTO_INCREMENT,
 first_name VARCHAR(10) NOT NULL,
 last_name VARCHAR(20) NOT NULL,
@@ -60,14 +60,14 @@ CONSTRAINT fk_players_teams
 FOREIGN KEY (team_id)
 REFERENCES teams(id));
 
-CREATE TABLE coaches(
+CREATE TABLE  IF NOT EXISTS coaches(
 id INT PRIMARY KEY AUTO_INCREMENT,
 first_name VARCHAR(10) NOT NULL,
 last_name VARCHAR(20) NOT NULL,
 salary DECIMAL(10,2) NOT NULL DEFAULT 0,
 coach_level INT NOT NULL DEFAULT 0);
 
-CREATE TABLE players_coaches(
+CREATE TABLE  IF NOT EXISTS players_coaches(
 player_id INT,
 coach_id INT,
 PRIMARY KEY (player_id, coach_id),
