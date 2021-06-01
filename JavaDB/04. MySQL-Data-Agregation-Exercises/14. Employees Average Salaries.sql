@@ -5,7 +5,7 @@ SELECT `department_id`,
 	END AS `avg_salary`
 FROM `employees`
 WHERE `salary` > 30000 && `manager_id` != 42
-GROUP BY `department_id`;
+GROUP BY `department_id` ORDER BY `department_id`;
 
 
 
