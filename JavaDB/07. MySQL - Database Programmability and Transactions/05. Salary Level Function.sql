@@ -15,4 +15,4 @@ END##
 
 DELIMITER ;
 
-SELECT ufn_get_salary_level(100000);
+SELECT ufn_get_salary_level(13500);
