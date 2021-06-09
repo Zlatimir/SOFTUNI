@@ -1,3 +1,5 @@
+DROP PROCEDURE IF EXISTS usp_get_towns_starting_with;
+
 DELIMITER ##
 
 CREATE PROCEDURE usp_get_towns_starting_with(start_with VARCHAR(50))
@@ -9,4 +11,4 @@ END##
 
 DELIMITER ;
 
-CALL usp_get_towns_starting_with('S');
+CALL usp_get_towns_starting_with('b');
