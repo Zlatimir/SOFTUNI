@@ -99,3 +99,5 @@ Hero.java
 /JavaDB/MySQL_cheatsheet.xlsx
 *.meta
 /Java_SpringData/database/minions_db.sql
+*.docx#
+/JavaDB/Exam_Prep_18-10-2020/01. Table Design_Data.sql
