@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -44,12 +45,28 @@ public class Engine implements Runnable {
 
                 case 8 -> exEightGetEmployeeWithProject();
 
+                case 10 -> exTenIncreaseSalaries();
+
                 default -> System.out.println("Wrong number - try again!");
 
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void exTenIncreaseSalaries() {
+        entityManager.getTransaction().begin();
+        List<Employee> resultList = entityManager.createQuery("select e from Employee e " +
+                "where e.department.name in ('Engineering'," +
+                "'Tool Design', 'Marketing', 'Information Services')", Employee.class).getResultList();
+
+        resultList.forEach(e -> {
+            e.setSalary(e.getSalary().multiply(BigDecimal.valueOf(1.12)));
+            entityManager.persist(e);
+            System.out.printf("%s %s ($%.2f)%n", e.getFirstName(), e.getLastName(), e.getSalary());
+        });
+        entityManager.getTransaction().commit();
     }
 
     private void exEightGetEmployeeWithProject() throws IOException {
@@ -61,8 +78,8 @@ public class Engine implements Runnable {
 
         Set<Project> projects = employee.getProjects();
         System.out.println(projects.stream().map(Project::getName).sorted()
-        .collect(Collectors.toList()).toString().replace("[", "")
-        .replace("]", "").replace(", ", System.lineSeparator()));
+                .collect(Collectors.toList()).toString().replace("[", "")
+                .replace("]", "").replace(", ", System.lineSeparator()));
     }
 
     private void exSevenAddressesWithEmployeeCount() {
@@ -70,7 +87,7 @@ public class Engine implements Runnable {
                 ("select a from Address a " +
                         " order by a.employees.size desc ", Address.class).setMaxResults(10)
                 .getResultList().forEach(a -> System.out.printf("%s, %s - %d employees%n"
-                , a.getText(), a.getTown().getName(),a.getEmployees().size()));
+                , a.getText(), a.getTown().getName(), a.getEmployees().size()));
     }
 
     private void exSixAddingNewAddressAndUpdatingEmployee() throws IOException {
@@ -132,7 +149,6 @@ public class Engine implements Runnable {
         }
 
     }
-
 
     private void exTwoChangeCasing() {
         entityManager.getTransaction().begin();
