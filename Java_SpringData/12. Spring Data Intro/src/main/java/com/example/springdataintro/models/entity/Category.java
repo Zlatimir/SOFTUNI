@@ -13,6 +13,10 @@ public class Category extends BaseEntity {
     public Category() {
     }
 
+    public Category(String categoryName) {
+        this.name = categoryName;
+    }
+
     @Column(name = "category", nullable = false, unique = true)
     public String getName() {
         return name;
